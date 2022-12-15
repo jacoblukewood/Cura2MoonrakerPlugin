@@ -352,7 +352,7 @@ class MoonrakerOutputDevice(PrinterOutputDevice):
     
     def _onPrinterError(self, reply: QNetworkReply = None, error = None) -> None:
         self._timeoutCounter += 1
-        maxTimeoutCounterValue = 20
+        maxTimeoutCounterValue = 30
         
         if self._timeoutCounter > maxTimeoutCounterValue:
             messageText = "Error: Connection to Moonraker at {} timed out.".format(self._url)
